@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+class StartPage extends StatefulWidget {
+  const StartPage({super.key});
+
+  @override
+  State<StartPage> createState() => _StartPageState();
+}
+
+class _StartPageState extends State<StartPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: RichText(
+          text: const TextSpan(
+            text: 'Did you just ',
+            children: [
+              TextSpan(
+                text: 'PRESS ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                )
+              ),
+              TextSpan(
+                text: 'the button?'
+              )
+            ]
+        ),
+        ),
+        backgroundColor: Colors.red,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            children: [
+              const Text(
+                'If you are here, then seems like everything works fine) Thank you for testing)',
+                textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Nice. And now again ;)')),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
