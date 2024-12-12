@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/widgets/buttons/button.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -13,20 +14,14 @@ class _StartPageState extends State<StartPage> {
     return Scaffold(
       appBar: AppBar(
         title: RichText(
-          text: const TextSpan(
-            text: 'Did you just ',
-            children: [
-              TextSpan(
+          text: const TextSpan(text: 'Did you just ', children: [
+            TextSpan(
                 text: 'PRESS ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                )
-              ),
-              TextSpan(
-                text: 'the button?'
-              )
-            ]
-        ),
+                )),
+            TextSpan(text: 'the button?')
+          ]),
         ),
         backgroundColor: Colors.red,
       ),
@@ -40,13 +35,18 @@ class _StartPageState extends State<StartPage> {
                 textAlign: TextAlign.center,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 16.0),
-                child: ElevatedButton(
-                    onPressed: () {
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: MyButton(
+                    text: 'Press me again',
+                    backgroundColor: Colors.white,
+                    textColor: Colors.black,
+                    borderColor: Colors.black,
+                    widthSize: 200,
+                    heightSize: 50,
+                    onTap: () {
                       Navigator.pop(context);
-                    },
-                    child: const Text('Nice. And now again ;)')),
-              )
+                      },
+                  ))
             ],
           ),
         ),
