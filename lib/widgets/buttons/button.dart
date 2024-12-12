@@ -1,26 +1,15 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  MyButton(
-      {super.key,
-      required this.text,
-      required this.backgroundColor,
-      this.icon,
-      required this.textColor,
-      required this.borderColor,
-      required this.widthSize,
-      required this.heightSize,
-      this.isIcon = false,
-      required this.onTap});
+  MyButton({super.key,
+    required this.text,
+    this.icon,
+    this.isIcon = false,
+    required this.onTap});
 
   final String text;
-  final Color backgroundColor;
-  final Color textColor;
-  final Color borderColor;
   final IconData? icon;
   final GestureTapCallback onTap;
-  double widthSize;
-  double heightSize;
   bool? isIcon;
 
   @override
@@ -28,17 +17,29 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: widthSize,
-        height: heightSize,
+        width: 150,
+        height: 40,
         decoration: BoxDecoration(
-            color: backgroundColor,
-            borderRadius: BorderRadius.circular(35),
-            border: Border.all(color: borderColor)),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.black)),
         child: Center(
-          child: Text(
+          child: isIcon == false
+              ? Text(
             text,
-            style: TextStyle(color: textColor),
-          ),
+            style: const TextStyle(color: Colors.black),
+          )
+              : Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon),
+              const SizedBox(width: 5),
+              Text(
+                text,
+                style: const TextStyle(color: Colors.black),
+              )
+            ],
+          )
         ),
       ),
     );

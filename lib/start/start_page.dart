@@ -37,15 +37,12 @@ class _StartPageState extends State<StartPage> {
               Padding(
                   padding: const EdgeInsets.only(top: 16.0),
                   child: MyButton(
-                    text: 'Press me again',
-                    backgroundColor: Colors.white,
-                    textColor: Colors.black,
-                    borderColor: Colors.black,
-                    widthSize: 200,
-                    heightSize: 50,
+                    isIcon: true,
+                    icon: Icons.account_circle_outlined,
+                    text: 'ok',
                     onTap: () {
                       Navigator.pop(context);
-                      },
+                    },
                   ))
             ],
           ),

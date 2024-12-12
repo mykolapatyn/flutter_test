@@ -17,9 +17,9 @@ class _StartPage2State extends State<StartPage2> {
           backgroundColor: Colors.green,
           title: const Center(
               child: Text(
-                'Do not press the button!)',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ))),
+            'Do not press the button!)',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ))),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 32),
         child: Center(
@@ -33,15 +33,12 @@ class _StartPage2State extends State<StartPage2> {
               Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: MyButton(
-                      text: 'Press me :)',
-                      backgroundColor: Colors.white,
-                      textColor: Colors.black,
-                      borderColor: Colors.black,
-                      widthSize: 200,
-                      heightSize: 50,
+                      text: 'Cancel',
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => const StartPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const StartPage()));
                       }))
             ],
           ),
